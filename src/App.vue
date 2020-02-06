@@ -46,7 +46,7 @@ export default {
   methods: {
     getTheData() {
       return new Promise((res, rej) => {
-        axios.get("/retrieve").then(resp => {
+        axios.get("http://goliving-api.herokuapp.com/retrieve").then(resp => {
           this.databaseEntries = resp.data;
           res();
         });
@@ -108,7 +108,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 .header {
@@ -118,45 +118,61 @@ export default {
   height: 50px;
   width: 100%;
   border-bottom: #f4745d solid;
-
-  h1 {
-    position: relative;
-    color: #f4745d;
-    font-family: "Lato", sans-serif;
-    left: 3%;
-    width: 20%;
-    bottom: 30%;
-    letter-spacing: 3.5px;
-  }
+}
+h1 {
+  position: relative;
+  color: #f4745d;
+  font-family: "Lato", sans-serif;
+  left: 3%;
+  width: 20%;
+  bottom: 30%;
+  letter-spacing: 3.5px;
+}
+.sub-title {
+  background-color: white;
+  color: #f4745d;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1.5px;
+  position: relative;
+  height: 7.5vh;
+  text-align: center;
+}
+.headers {
+  color: white;
+  height: 4vh;
+  font-family: "Lato", sans-serif;
+  display: grid;
+  grid-template-areas: "1 2 3";
+  grid-template-columns: 25% 47.5% 22.5%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
+.list {
+  border-radius: 5px;
+  padding: 1%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 7.5vh;
+  overflow: auto;
+}
+.singleUser {
+  background-color: white;
+  font-family: "Lato", sans-serif;
+  display: grid;
+  grid-template-columns: 32% 37% 28%;
+  text-align: left;
+}
+p {
+  position: relative;
+  margin-left: 30%;
+  font-weight: 600;
+}
 .listBox {
-  .sub-title {
-    background-color: white;
-    color: #f4745d;
-    width: 100%;
-    font-family: "Lato", sans-serif;
-    letter-spacing: 1.5px;
-    position: relative;
-    height: 7.5vh;
-    text-align: center;
-  }
-  .headers {
-    color: white;
-    height: 4vh;
-    font-family: "Lato", sans-serif;
-    display: grid;
-    grid-template-areas: "1 2 3";
-    grid-template-columns: 25% 47.5% 22.5%;
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-align: center;
-    p {
-      position: relative;
-      top: 0;
-    }
-  }
   position: relative;
   top: 7.5vh;
   border-radius: 10px;
@@ -164,54 +180,29 @@ export default {
   height: 85vh;
   overflow: none;
   background: #f4745d;
-  .list {
-    border-radius: 5px;
-    padding: 1%;
-    height: 60vh;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-auto-rows: 7.5vh;
-    overflow: auto;
-  }
-
-  .singleUser {
-    background-color: white;
-    font-family: "Lato", sans-serif;
-    display: grid;
-    grid-template-columns: 32% 37% 28%;
-    text-align: left;
-
-    p {
-      position: relative;
-      margin-left: 30%;
-      font-weight: 600;
-    }
-  }
-
-  .bottom {
-    width: 100%;
-    margin-left: 2%;
-    margin-top: 1%;
-    color: white;
-    font-family: "Lato", sans-serif;
-
-    .updateButton {
-      cursor: pointer;
-      background-color: white;
-      color: #f4745d;
-      font-family: "Lato", sans-serif;
-      font-weight: 600;
-      padding: 5px;
-      border-radius: 5px;
-      position: relative;
-      float: right;
-      right: 5%;
-      &:hover {
-        color: white;
-        background-color: #f4745d;
-        outline: 2px solid white;
-      }
-    }
-  }
+}
+.bottom {
+  width: 100%;
+  margin-left: 2%;
+  margin-top: 1%;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+.updateButton {
+  cursor: pointer;
+  background-color: white;
+  color: #f4745d;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  float: right;
+  right: 5%;
+}
+.updateButton:hover {
+  color: white;
+  background-color: #f4745d;
+  outline: 2px solid white;
 }
 </style>
