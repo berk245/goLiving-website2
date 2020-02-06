@@ -46,7 +46,7 @@ export default {
   methods: {
     getTheData() {
       return new Promise((res, rej) => {
-        axios.get("http://goliving-api.herokuapp.com/retrieve").then(resp => {
+        axios.get("https://goliving-api.herokuapp.com/retrieve").then(resp => {
           this.databaseEntries = resp.data;
           res();
         });
