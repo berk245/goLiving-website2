@@ -20,7 +20,7 @@
           <p>{{ entry.name }}</p>
           <p>{{ entry.date }}</p>
           <p>{{ entry.room }}</p>
-          <a :href="entry.image">Download Photo</a>
+          <a :href="entry.image" target="_blank" download>Download Photo</a>
         </li>
       </div>
       <div class="bottom">
