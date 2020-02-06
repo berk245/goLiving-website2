@@ -20,6 +20,7 @@
           <p>{{ entry.name }}</p>
           <p>{{ entry.date }}</p>
           <p>{{ entry.room }}</p>
+          <a :href="entry.image">Download Photo</a>
         </li>
       </div>
       <div class="bottom">
@@ -29,7 +30,7 @@
         Date
         <input @click="roomSort" type="radio" name="sorter" />
         Room
-        <span class="updateButton" @click="getTheData">Update</span>
+        <span class="updateButton" @click="getTheData">Update List</span>
       </div>
     </div>
   </div>
@@ -144,7 +145,7 @@ h1 {
   font-family: "Lato", sans-serif;
   display: grid;
   grid-template-areas: "1 2 3";
-  grid-template-columns: 25% 47.5% 22.5%;
+  grid-template-columns: 25% 35% 22.5%;
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -164,11 +165,28 @@ h1 {
   background-color: white;
   font-family: "Lato", sans-serif;
   display: grid;
-  grid-template-columns: 32% 37% 28%;
+  grid-template-columns: 30% 30% 30% 10%;
   text-align: left;
+}
+a {
+  align-self: center;
+  justify-self: left;
+  text-decoration: none;
+  color: #f4745d;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-justify: center;
+}
+a:hover {
+  color: #f4745d;
+  outline: 2px solid #f4745d;
 }
 p {
   position: relative;
+  align-self: center;
   margin-left: 30%;
   font-weight: 600;
 }
@@ -198,7 +216,7 @@ p {
   border-radius: 5px;
   position: relative;
   float: right;
-  right: 5%;
+  right: 7.5%;
 }
 .updateButton:hover {
   color: white;
